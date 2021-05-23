@@ -1,0 +1,124 @@
+package com.gua.guapay.modules.business.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author auto-genergator
+ * @since 2021-05-23
+ */
+@TableName("transfer_record")
+public class TransferRecord extends Model<TransferRecord> {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+
+    /**
+     * 转账账号
+     */
+    private String transferNum;
+
+    /**
+     * 接受账号
+     */
+    private String acceptNum;
+
+    /**
+     * 转账金额
+     */
+    private BigDecimal transferMoney;
+
+    private LocalDateTime createTime;
+
+    private LocalDateTime updateTime;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTransferNum() {
+        return transferNum;
+    }
+
+    public void setTransferNum(String transferNum) {
+        this.transferNum = transferNum;
+    }
+
+    public String getAcceptNum() {
+        return acceptNum;
+    }
+
+    public void setAcceptNum(String acceptNum) {
+        this.acceptNum = acceptNum;
+    }
+
+    public BigDecimal getTransferMoney() {
+        return transferMoney;
+    }
+
+    public void setTransferMoney(BigDecimal transferMoney) {
+        this.transferMoney = transferMoney;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public static final String ID = "id";
+
+    public static final String TRANSFER_NUM = "transfer_num";
+
+    public static final String ACCEPT_NUM = "accept_num";
+
+    public static final String TRANSFER_MONEY = "transfer_money";
+
+    public static final String CREATE_TIME = "create_time";
+
+    public static final String UPDATE_TIME = "update_time";
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return "TransferRecord{" +
+        "id=" + id +
+        ", transferNum=" + transferNum +
+        ", acceptNum=" + acceptNum +
+        ", transferMoney=" + transferMoney +
+        ", createTime=" + createTime +
+        ", updateTime=" + updateTime +
+        "}";
+    }
+}
