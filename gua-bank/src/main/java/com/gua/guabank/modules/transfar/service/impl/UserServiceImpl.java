@@ -51,4 +51,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return userMapper.selectOne(queryWrapper);
     }
 
+    @Override
+    public User getUserByIdcardnum(String idcardnum) {
+        return userMapper.getUserByIdcardnum(idcardnum);
+    }
+
 }

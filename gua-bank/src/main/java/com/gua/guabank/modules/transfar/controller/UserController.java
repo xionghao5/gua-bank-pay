@@ -8,10 +8,7 @@ import com.gua.guabank.modules.transfar.pojo.qo.PageQo;
 import com.gua.guabank.modules.transfar.pojo.qo.UserQo;
 import com.gua.guabank.modules.transfar.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -44,5 +41,11 @@ public class UserController {
     public User getUser(@RequestBody UserQo userQo){
         return userService.getUser(userQo);
     }
+
+    @GetMapping("/getUserByIdcardnum")
+    public User getUserByIdcardnum(String idcardnum){
+        return userService.getUserByIdcardnum(idcardnum);
+    }
+
 }
 

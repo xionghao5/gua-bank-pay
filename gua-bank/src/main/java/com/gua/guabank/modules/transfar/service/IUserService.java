@@ -20,4 +20,6 @@ public interface IUserService extends IService<User> {
     IPage<User> pageUser(IPage<User> page);
 
     User getUser(UserQo userQo);
+
+    User getUserByIdcardnum(String idcardnum);
 }

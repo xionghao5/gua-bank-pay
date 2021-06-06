@@ -13,4 +13,5 @@ import com.gua.guabank.modules.transfar.entity.User;
  */
 public interface UserMapper extends BaseMapper<User> {
 
+    User getUserByIdcardnum(String idcardnum);
 }
