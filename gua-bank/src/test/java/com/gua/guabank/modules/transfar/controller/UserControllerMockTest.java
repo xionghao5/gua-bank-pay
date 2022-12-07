@@ -1,11 +1,15 @@
 package com.gua.guabank.modules.transfar.controller;
 
+import com.gua.guabank.modules.transfar.entity.User;
 import com.gua.guabank.modules.transfar.pojo.qo.UserQo;
 import com.gua.guabank.modules.transfar.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import static org.mockito.BDDMockito.given;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerMockTest {
@@ -21,5 +25,10 @@ public class UserControllerMockTest {
         userQo.setUsername("老王");
         userQo.setIdcardnum("4211261999901");
         userService.addUser(userQo);
+    }
+
+    @Test
+    public void getUserByIdcardnum() {
+        userService.getUserByIdcardnum("4211261999901");
     }
 }
